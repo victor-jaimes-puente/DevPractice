@@ -45,7 +45,10 @@ let fact = "is cool!"; // Change this line
 fact = "is awesome!";
 console.log(FCC, fact); // Change this line
 
-// *** 
+// *** Create Decimal Numbers with JavaScript
+
+
+
 
 
 
