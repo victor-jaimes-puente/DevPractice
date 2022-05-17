@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>101 Exercises in JS</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <meta name="description" content="101 Exercises for practicing JavaScript fundamentals datatypes, operators, and functions">
+    <meta name="keywords" content="learn to code, JavaScript">
+    <meta name="author" content="Ryan Orsinger">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" 
+      type="image/png" 
+      href="https://cdn.glitch.com/project-avatar/eea181be-12a8-4dfb-9200-096233b7a427.png?1565986940392">
+</head>
+<body>
+    <header>
+        <h1>101 Exercises </h1>
+    </header>
+    <main>
+        <section class="instructions">
+            <h2>Instructions</h2>
+            <article>
+                <h3>Quick Start</h3>
+                <ol>
+                    <li>Create yourself an account on <a href="https://glitch.com">Glitch.com</a></li>
+                    <li>Click on the fish icon in the upper right and select "Remix on Glitch" to make your own copy</li>
+                    <li>Use Glitch.com as your editor</li>
+                    <li>Launch index.html with the "Preview" icon in the Glitch editor. The "Preview" icon is at the bottom of the screen. Recommend using "Preview in a New Window"</li>
+                    <li>The keyboard shortcut to launch the application is Ctrl + Shift + R (same as previewing in a new window)</li>
+              </ol>
+            </article>
+            <hr>
+            <article>
+              <h3>Expected Workflow</h3>
+              <ul>
+                <li>From this page, open the JavaScript console to see the next error.</li>
+                <li>Each error message tells you the next exercise to solve or bug to fix.</li>
+                <li>Use the glitch.com editor to make changes in your 101-exercises.js file</li>
+                <li>Refresh the index.html page</li>
+                <li>Repeat</li>
+              </ul>
+            </article>
+            <article>
+              <h3>What to do when you don't know what to do next</h3>
+              <p>When the exercise asks you to reverse an array in JavaScript, the way forward is to search for <em>"How to reverse an array in JavaScript"</em> in your favorite search engine.</p>
+              <p>When the exercise asks you to check if a number is even, the way forward is to search for <em>"how to check if a number is even in JavaScript"</em>.</p>
+              <p>When the exercise has you calculate the area of a circle, the way forward is to search for <em>"how to calculate the area of a circle in JavaScript"</em> or <em>"How to get pi in JavaScript"</em>.</p>
+              <p>The pattern for finding what you need in JavaScript is to rely very heavily on search engine searches so you can find examples of working code and discussions about code that speak to your questions.</p> 
+            </article>
+            <article>
+                <h3>Orientation</h3>
+                <ul>
+                    <li>This index.html page shares the instructions and the JS console shows errors.</li>
+                    <li>The only time your JS Console will show no errors is when all the exercises have working solutions.</li>
+                  <li>Open the JavaScript console in <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console" target="_blank">Firefox</a> or <a href="https://stackoverflow.com/questions/66420/how-do-you-launch-the-javascript-debugger-in-google-chrome" target="_blank">Chrome</a></li> 
+                    <ul>
+                        <li>For Mac, the keyboard shortcut is "Command + Option + i"</li>   
+                        <li>For Windows, the keyboard shortcut "Shift + CTRL + j".</li>
+                    </ul>
+                    <li>Start writing solutions inside of 101-exercises.js in the editor.</li>
+
+                    <li>Refresh this index.html to re-run you new JS code, then check your JS Console to see that your solution worked or if there's something</li>
+                </ul>
+            </article>
+            <hr>
+            <article>
+                <h3>Rationale</h3>
+                <p>101 Exercises exists to help learners gain deep practice with fundamentals, operators, syntax, and converting problems in English to solutions in JS.</p>
+                <p>The best way to learn how to program is write programs. Each exercise is a tiny little program.</p>
+                <p>Expect to do a tremendous amount of search engine searches, make many mistakes, and try again. This is all part of programming. Take breaks.</p>
+            </article>  
+            <hr>
+            <article>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps" target="_blank">JS First Steps</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks" target="_blank">JS Building Blocks</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" target="_blank">Functions reference</a></li>
+                    <li><a href="https://eloquentjavascript.net/" target="_blank">First chapters of Eloquent JavaScript</a></li>
+                </ul>
+            </article>
+        </section>
+        <section class="troubleshooting">
+            <article>
+                <h2>Troubleshooting</h2>
+                <h3>General Guidance</h3>
+                <ul>
+                    <li>Your JS code runs from top to bottom</li>
+                    <li>Solve the exercises one at a time and in order.</li>
+                    <li>Fix any syntax errors before moving forward with the exercises</li>
+                    <li>Any synax error in your code may halt the execution of all of your code.</li>  
+                    <li>Double check your spelling. Capitalization matters in programming.</li>
+                    <li>Solve one thing at a time and avoid jumping around.</li>
+                    <li>Each exercise must pass its tests in order for you to see the next exercise.</li>
+                    <li>If you have an incorrect answer or syntax error on an exercise, fix it before moving forward.</li>
+                </ul>
+            </article>
+            <hr>
+            <article>
+                <h3>Error messages</h3>
+                <figure>
+                    <p>
+                        <em>Reference Error</em> means you need to define the variable or function. 
+                        <br>
+                        The number by the 101-exercises.js filename highlights the line where the variable is referenced before it exist
+                    </p>
+                    <img src="https://cdn.glitch.com/eea181be-12a8-4dfb-9200-096233b7a427%2Freference_error.png?v=1566406423258" alt="image of a reference">
+                </figure>
+                <figure>
+                    <p>
+                        <em>Syntax Error</em> means there's a syntax error that needs to be fixed. 
+                        <br>
+                        The number by the 101-exercises.js filename highlights the line where the syntax error exists.
+                    </p>
+                    <img src="https://cdn.glitch.com/eea181be-12a8-4dfb-9200-096233b7a427%2Fsyntax_error.png?v=1566406423173" alt="image of a syntax error">
+                </figure>
+                
+                <figure>
+                    <p>
+                        <em>Uncaught Error</em> means the answer is incorrect and doesn't match the test. 
+                        <br>    
+                        The largest number by the 101-exercises.js filename specifies the line of code for the exercise where there is a mismatch. 
+                        <br>
+                        In this example, line 36 of 101-exercises.js specifies where there is an error. The earlier line numbers reference the assertion testing function itself.
+                    </p>
+                    <img src="https://cdn.glitch.com/eea181be-12a8-4dfb-9200-096233b7a427%2Fexpected_vs_actual.png?v=1566845593758" alt="uncaught error message">
+                </figure>
+            </article>
+            <article>
+                  <h3>Video Demonstration of Workflow</h3>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/fvP9Bh_sJyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </article>
+            <hr>
+            <article>
+                <p>If you notice any typos, misspellings, or mistakes, please triple check your work and <a href="https://github.com/ryanorsinger/101-exercises-js/issues" target="_blank">open an issue on GitHub</a> citing both the line number and exercise number.</p>
+            </article>
+        </section>
+        <section class="correct">
+            <h2>
+              <span id="count"></span>
+              <br>
+              Problems Correct
+            </h2>
+            <p id="counting_directions">
+              
+            </p>
+            <ul></ul>
+        </section>
+    </main> 
+
+
+<div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+<script src="https://button.glitch.me/button.js"></script>
+
+  
+<script src="./101-exercises.js" type="text/javascript"></script>
+<script>
+  
+    
+  if (document.getElementById("count").innerText == "") {
+    document.getElementById("counting_directions").innerText = 'As you progress, any JS syntax error will make this count "disappear". Identify and resolve any JS syntax errors.';
+  }
+  
+</script>
+</body>
+</html>
