@@ -515,6 +515,10 @@ addToDone("Exercise 26 is correct.")
 // Exercise 27
 // Write a function definition named isMultipleOfFive that takes in a number and returns true or false if the number is evenly divisible by 5.
 
+let isMultipleOfFive = (n) => {
+    return n % 5 == 0;
+}
+
 assert(isMultipleOfFive(3), false, "Exercise 27");
 assert(isMultipleOfFive(15), true, "Exercise 27");
 assert(isMultipleOfFive(9), false, "Exercise 27");
@@ -528,6 +532,10 @@ addToDone("Exercise 27 is correct.")
 
 // Exercise 28
 // Write a function definition named isMultipleOfBothThreeAndFive that takes in a number and returns true or false if the number is evenly divisible by both 3 and 5.
+
+let isMultipleOfBothThreeAndFive = (n) => {
+    return isMultipleOfThree(n) && isMultipleOfFive(n);
+}
 
 assert(isMultipleOfBothThreeAndFive(15), true, "Exercise 28");
 assert(isMultipleOfBothThreeAndFive(45), true, "Exercise 28");
@@ -544,6 +552,10 @@ addToDone("Exercise 28 is correct.")
 // Exercise 29
 // Write a function definition named square that takes in a number and returns the number times itself.
 
+let square = (n) => {
+    return n * n;
+}
+
 assert(square(3), 9, "Exercise 29");
 assert(square(2), 4, "Exercise 29");
 assert(square(9), 81, "Exercise 29");
@@ -557,6 +569,9 @@ addToDone("Exercise 29 is correct.")
 // Exercise 30
 // Write a function definition named add that takes in two numbers and returns the sum.
 
+let add = (n1, n2,) => {
+    return n1 + n2;
+}
 
 assert(add(3, 2), 5, "Exercise 30");
 assert(add(10, -2), 8, "Exercise 30");
@@ -569,6 +584,10 @@ addToDone("Exercise 30 is correct.")
 
 // Exercise 31
 // Write a function definition named cube that takes in a number and returns the number times itself, times itself.
+
+let cube = (n) => {
+    return Math.pow(n,3);
+}
 
 assert(cube(3), 27, "Exercise 31");
 assert(cube(2), 8, "Exercise 31");
@@ -583,6 +602,9 @@ addToDone("Exercise 31 is correct.")
 // Exercise 32
 // Write a function definition named squareRoot that takes in a number and returns the square root of the provided number
 
+let squareRoot = (n) => {
+    return Math.sqrt(n);
+}
 
 assert(squareRoot(4), 2.0, "Exercise 32");
 assert(squareRoot(64), 8.0, "Exercise 32");
@@ -597,6 +619,11 @@ addToDone("Exercise 32 is correct.")
 // Exercise 33
 // Write a function definition named subtract that takes in two numbers and returns the first minus the second argument.
 
+let subtract = (n1, n2) => {
+    return n1 - n2;
+}
+
+
 
 assert(subtract(8, 6), 2, "Exercise 33");
 assert(subtract(27, 4), 23, "Exercise 33");
@@ -610,6 +637,10 @@ addToDone("Exercise 33 is correct.")
 // Exercise 34
 // Write a function definition named multiply that takes in two numbers and returns the first times the second argument.
 
+let multiply = (n1, n2) => {
+    return n1 * n2;
+}
+
 assert(multiply(2, 1), 2, "Exercise 34");
 assert(multiply(3, 5), 15, "Exercise 34");
 assert(multiply(5, 2), 10, "Exercise 34");
@@ -622,6 +653,9 @@ addToDone("Exercise 34 is correct.")
 // Exercise 35
 // Write a function definition named divide that takes in two numbers and returns the first argument divided by the second argument.
 
+let divide = (n1, n2) => {
+    return n1 / n2;
+}
 
 assert(divide(27, 9), 3, "Exercise 35");
 assert(divide(15, 3), 5, "Exercise 35");
@@ -635,6 +669,11 @@ addToDone("Exercise 35 is correct.")
 // Exercise 36
 // Write a function definition named quotient that takes in two numbers and returns the quotient of dividing the first argument by the second argument.
 
+let quotient = (n1, n2) => { 
+    return Math.floor(n1 / n2);
+
+}
+
 assert(quotient(27, 9), 3, "Exercise 36");
 assert(quotient(5, 2), 2, "Exercise 36");
 assert(quotient(10, 3), 3, "Exercise 36");
@@ -645,6 +684,11 @@ addToDone("Exercise 36 is correct.")
 
 // Exercise 37
 // Write a function definition named remainder that takes in two numbers and returns the remainder of first argument divided by the second argument.
+
+let remainder = (n1, n2) => { 
+    return (n1 % n2);
+
+}
 
 assert(remainder(3, 3), 0, "Exercise 37");
 assert(remainder(5, 2), 1, "Exercise 37");
@@ -658,6 +702,11 @@ addToDone("Exercise 37 is correct.")
 // Exercise 38
 // Write a function definition named sumOfSquares that takes in two numbers, squares each number, then returns the sum of both squares.
 
+let sumOfSquares = (n1, n2) => { 
+    return (square(n1) + square(n2));
+
+}
+
 assert(sumOfSquares(3, 2), 13, "Exercise 38");
 assert(sumOfSquares(5, 2), 29, "Exercise 38");
 assert(sumOfSquares(2, 4), 20, "Exercise 38");
@@ -669,6 +718,11 @@ addToDone("Exercise 38 is correct.")
 
 // Exercise 39
 // Write a function definition named timesTwoPlusThree that takes in a number, multiplies it by two, adds 3 and returns the result.
+
+let timesTwoPlusThree = (n) => { 
+    return multiply(n, 2) + 3;
+
+}
 
 assert(timesTwoPlusThree(0), 3, "Exercise 39");
 assert(timesTwoPlusThree(1), 5, "Exercise 39");
@@ -682,6 +736,11 @@ addToDone("Exercise 39 is correct.")
 
 // Exercise 40
 // Write a function definition named areaOfRectangle that takes in two numbers and returns the product.
+
+let areaOfRectangle = (n1, n2) => { 
+    return multiply(n1,n2);
+
+}
 
 assert(areaOfRectangle(1, 3), 3, "Exercise 40");
 assert(areaOfRectangle(5, 2), 10, "Exercise 40");
