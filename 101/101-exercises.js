@@ -421,7 +421,9 @@ addToDone("Exercise 21 is correct.")
 // Exercise 22
 // Write a function definition named double that takes in a number and returns double the provided number.
 
-console.log('test22');
+let double = (n) => {
+    return n * 2 ;
+}
 
 assert(double(4), 8, "Exercise 22");
 assert(double(5), 10, "Exercise 22");
@@ -438,6 +440,10 @@ addToDone("Exercise 22 is correct.")
 // Exercise 23
 // Write a function definition named triple that takes in a number and returns triple the provided number.
 
+let triple = (n) => {
+    return n * 3; 
+}
+
 assert(triple(4), 12, "Exercise 23");
 assert(triple(5), 15, "Exercise 23");
 assert(triple(positiveOddNumber), positiveOddNumber * 3, "Exercise 23");
@@ -453,6 +459,9 @@ addToDone("Exercise 23 is correct.")
 // Exercise 24
 // Write a function definition named reverseSign that takes in a number and returns the provided number but with the sign reversed.
 
+let reverseSign = (n) => {
+    return n * -1;
+}
 assert(reverseSign(4), -4, "Exercise 24");
 assert(reverseSign(-5), 5, "Exercise 24");
 assert(reverseSign(positiveOddNumber), positiveOddNumber * -1, "Exercise 24");
@@ -468,6 +477,10 @@ addToDone("Exercise 24 is correct.")
 // Exercise 25
 // Write a function definition named absoluteValue that takes in a number and returns the absolute value of the provided number
 
+let absoluteValue = (n) => {
+    return Math.abs(n);
+}
+
 assert(absoluteValue(4), 4, "Exercise 25");
 assert(absoluteValue(-5), 5, "Exercise 25");
 assert(absoluteValue(positiveOddNumber), positiveOddNumber, "Exercise 25");
@@ -482,6 +495,10 @@ addToDone("Exercise 25 is correct.")
 
 // Exercise 26
 // Write a function definition named isMultipleOfThree that takes in a number and returns true or false if the number is evenly divisible by 3.
+
+let isMultipleOfThree = (n) => {
+    return n % 3 == 0;
+}
 
 assert(isMultipleOfThree(3), true, "Exercise 26");
 assert(isMultipleOfThree(15), true, "Exercise 26");
