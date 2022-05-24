@@ -141,9 +141,38 @@ const newState = playlistReducer(state, addAction);
 
 
 // Currently working on SEC+ will finish section then come back to this. 
+
+//  Stopped at Lesson 11: Implementing Secure Network Protocols
+// 
 // **** 5
-// **** 
-// **** 
+// **** 6
+import { createStore } from 'redux';
+
+const initialState = 0;
+const countReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'increment':
+      return state + 1;
+    case 'decrement':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+const store = createStore(countReducer);
+
+// Dispatch your actions here.
+store.dispatch({type: 'increment'})
+store.dispatch({type: 'increment'})
+store.dispatch({type: 'decrement'})
+store.dispatch({type: 'decrement'})
+store.dispatch({type: 'decrement'})
+console.log(store.getState())
+
+// Final was -1
+
+// **** 6
 // **** 
 // **** 
 // **** 
