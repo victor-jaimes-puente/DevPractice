@@ -55,4 +55,49 @@ app.listen(PORT, () => {
 });
 
 // ---
+// Create a GET /expressions/:id get route that you will use to send back a single expression. You can use req.params object and the pre-written helper function getElementById(id, array) to find the correct expression before sending it back.
+
+// For instance, to find ID 560 from expressions, you would call getElementById(560, expressions);. This function returns the element object if it exists and undefined if it does not.
+
+// Don’t forget to restart your server when you make changes to app.js. To test the Express Yourself machine, use the box in the upper-left corner to send a GET request for a specified ID.
+
+const express = require('express');
+const app = express();
+
+// Serves Express Yourself website
+app.use(express.static('public'));
+
+const { getElementById, seedElements } = require('./utils');
+
+const expressions = [];
+seedElements(expressions, 'expressions');
+
+const PORT = process.env.PORT || 4001;
+// Use static server to serve the Express Yourself Website
+app.use(express.static('public'));
+
+app.get('/expressions', (req, res, next) => {
+  res.send(expressions);
+});
+
+// Add a new call to app.get('/expressions/:id') here
+
+app.get('/expressions/:id',(req,res,next) => {
+  console.log(req.params.id);
+  const id = req.params.id -1
+  res.send(expressions[id])
+})
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
+
+// localhost:4001/expressions/3
+// output : {"id":3,"emoji":"😴","name":"sleepy"}
+
+// ---
+
+
+
+
+
 
