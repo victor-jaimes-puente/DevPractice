@@ -9,20 +9,50 @@
 
 // When you want to check that you have written your starting server code correctly, use the ‘Check Work’ button.
 
-
-// Import the express library here
 const express = require('express');
-// Instantiate the app here
 const app = express();
-const PORT = process.env.PORT || 4001;
 
-// Invoke the app's `.listen()` method below:
+const PORT = process.env.PORT || 4001;
+// Use static server to serve the Express Yourself Website
+app.use(express.static('public'));
+
+// Open a call to `app.get()` below:
 app.listen(PORT, () => {
-  console.log("dapper")
+  console.log(`Listening on port ${PORT}`);
+});
+app.get('/expressions', (req, res, next) => {
+  console.log(req)
 })
 
-// ---------
+// ---
 
+// Send the expressions array from your app.get handler. Now that you have a complete route, you can test it out by reloading the browser window and clicking the ‘Refresh Expressions’ button on the machine.
 
+// If you make changes to app.js, you will need to restart your server to see the changes in effect. You can do this by pressing Ctrl + C in the terminal window to stop the old server, and you can start it again with node app.js.
 
+const express = require("express");
+const app = express();
+const { seedElements } = require("./utils");
+
+// Serves Express Yourself website
+app.use(express.static("public"));
+
+const PORT = process.env.PORT || 4001;
+// Use static server to serve the Express Yourself Website
+app.use(express.static("public"));
+
+const expressions = [];
+seedElements(expressions, "expressions");
+
+// Get all expressions
+app.get("/expressions", (req, res, next) => {
+  console.log(expressions);
+  res.send(expressions)
+});
+
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
+
+---
 
