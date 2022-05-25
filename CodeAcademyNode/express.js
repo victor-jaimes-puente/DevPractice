@@ -3,7 +3,7 @@
 
 // Create an instance of an Express server and save it to a variable named app.
 
-// Start the server listening on the port defined by the PORT variable. When the server has started, log a message to the console that the server is listening for requests.
+// Start the server listening on the port defined by the PORT variable. When the server has started, log a message to the console that the seÇrver is listening for requests.
 
 // To actually start your server listening, run the command node app.js to run your server in Node. At this point, it won’t do much, but if you’ve completed the steps above, it will log your message to show that the server started successfully.
 
