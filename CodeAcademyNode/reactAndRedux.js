@@ -252,6 +252,114 @@ export class List extends React.Component {
     );
   }
 } 
+/* 
 
+Take a look at the Button component class.
 
+Notice that on line 8, Button expects to receive a prop named text. The received text will be displayed inside of a <button></button> element.
+
+What if nobody passes any text to Button?
+
+If nobody passes any text to Button, then Button‘s display will be blank. It would be better if Button could display a default message instead.
+
+You can make this happen by giving your component class a property named defaultProps:
+
+class Example extends React.Component {
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+ 
+Example.defaultProps;
+The defaultProps property should be equal to an object:
+
+class Example extends React.Component {
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+ 
+// Set defaultProps equal to an object:
+Example.defaultProps = {};
+Inside of this object, write properties for any default props that you’d like to set:
+
+class Example extends React.Component {
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+ 
+Example.defaultProps = { text: 'yo' }; 
+If an <Example /> doesn’t get passed any text, then it will display “yo.”
+
+If an <Example /> does get passed some text, then it will display that passed-in text.
+
+Instructions
+1.
+Click Run.
+
+What a sad, textless button! :(
+
+Checkpoint 2 Passed
+
+Stuck? Get a hint
+2.
+On line 15, give the Button component class a defaultProps property. Make this property equal to an object.
+
+Give the defaultProps object one property, so that text‘s default value is equal to 'I am a button'.
+
+The button’s appearance should change. Much better!
+
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3.
+In the ReactDOM.render() call, give <Button /> the following attribute:
+
+text=""
+Your new prop should override the default, making the <button></button> sad again :(
+
+*/
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Button extends React.Component {
+  render() {
+    return (
+      <button>
+        {this.props.text}
+      </button>
+    );
+  }
+}
+
+// defaultProps goes here:
+Button.defaultProps = { text: 'I am a button'}
+
+ReactDOM.render(
+  <Button text='' />, 
+  document.getElementById('app')
+);
+
+/* 
+
+this.props Recap
+That completes our lesson on props. Great job sticking with it!
+
+Here are some of the skills that you have learned:
+
+Passing a prop by giving an attribute to a component instance
+Accessing a passed-in prop via this.props.prop-name
+Displaying a prop
+Using a prop to make decisions about what to display
+Defining an event handler in a component class
+Passing an event handler as a prop
+Receiving a prop event handler and attaching it to an event listener
+Naming event handlers and event handler attributes according to convention
+this.props.children
+getDefaultProps
+That’s a lot! Don’t worry if it’s all a bit of a blur. Soon you’ll get plenty of practice!
+
+*/ 
 
