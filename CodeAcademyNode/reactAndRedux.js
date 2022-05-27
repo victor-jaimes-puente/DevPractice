@@ -108,5 +108,150 @@ export class Greeting extends React.Component {
   }
 }
 
+/*
+Your goal is to pass talk from <Talker /> to <Button />.
+
+What prop name should you choose?
+
+It doesn’t really matter! prop attributes will work with just about any name, so long as the name follows the JavaScript variable name rules.
+
+Since you’re going to pass a function named talk, you might as well use talk as your name. Inside of the render method, change your attribute name from foo to talk.
+
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3.
+What should your prop value be?
+
+Your prop value should be the information that you want to pass! In this case, you want to pass the method named talk.
+
+Inside of the render method, change your attribute’s value to talk.
+*/
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Talker extends React.Component {
+  talk() {
+    let speech = '';
+    for (let i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  }
+  
+  render() {
+    return <Button talk={this.talk} />;
+  }
+}
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+/* 
+this.props.children
+Every component’s props object has a property named children.
+
+this.props.children will return everything in between a component’s opening and closing JSX tags.
+
+So far, all of the components that you’ve seen have been self-closing tags, such as <MyComponentClass />. They don’t have to be! You could write <MyComponentClass></MyComponentClass>, and it would still work.
+
+this.props.children would return everything in between <MyComponentClass> and </MyComponentClass>.
+
+Look at BigButton.js. In Example 1, <BigButton>‘s this.props.children would equal the text, “I am a child of BigButton.”
+
+In Example 2, <BigButton>‘s this.props.children would equal a <LilButton /> component.
+
+In Example 3, <BigButton>‘s this.props.children would equal undefined.
+
+If a component has more than one child between its JSX tags, then this.props.children will return those children in an array. However, if a component has only one child, then this.props.children will return the single child, not wrapped in an array.
+
+Instructions
+1.
+Select App.js.
+
+Notice that App renders two <List></List> instances, and that each <List></List> has at least one <li></li> child.
+
+Now open List.js, and take a look at the List component class.
+
+Think about the fact that each List instance is going to be rendered with two JSX tags:
+
+<List>  // opening tag
+</List> // closing tag
+…and that there will be at least one <li></li> child in between those tags:
+
+<List>  // opening tag
+  <li></li> // child
+</List> // closing tag
+Click Run.
+
+Checkpoint 2 Passed
+
+Stuck? Get a hint
+2.
+You can see two list titles in the browser, but no list items! How can you make the list-items appear?
+
+In List.js, in the render function, in between <ul></ul> tags, add {this.props.children}.
+
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3.
+BONUS: Each <List></List> instance is passed a singular title: “Living Musician” and “Living Cat Musician,” respectively. Somehow, each <List></List> counts its list-items and automatically adds an “s” to the end of its title if the count is greater than one. We could add a second piano cat, and the second list title would automatically pluralize.
+
+See if you can figure out how the instances of the List component class are automatically pluralizing their titles! 
+
+*/
+
+//App.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { List } from './List';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+          <li>Nova the Cello Cat</li>
+        </List>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+); 
+
+//List.js
+
+import React from 'react';
+
+export class List extends React.Component {
+  render() {
+    let titleText = `Favorite ${this.props.type}`;
+    if (this.props.children instanceof Array) {
+    	titleText += 's';
+    }
+    return (
+      <div>
+        <h1>{titleText}</h1>
+        <ul>{this.props.children}</ul>
+      </div>
+    );
+  }
+} 
+
 
 
