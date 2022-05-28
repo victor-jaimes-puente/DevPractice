@@ -755,10 +755,17 @@ addToDone("Exercise 40 is correct.")
 // Exercise 41
 // Write a function definition named areaOfCircle that takes in a number representing a circle's radius and returns the area of the circle
 
+let areaOfCircle = (radius) => {
+    let area = (radius * radius) * Math.PI
+    console.log(area)
+    return area;
+}
 
 assert(areaOfCircle(3), 28.274333882308138, "Exercise 41");
 assert(areaOfCircle(5), 78.53981633974483, "Exercise 41");
 assert(areaOfCircle(7), 153.93804002589985, "Exercise 41");
+
+
 var finished = done++;
 console.log("problems finished = " + finished);
 addToDone("Exercise 41 is correct.")
