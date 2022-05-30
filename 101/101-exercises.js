@@ -806,22 +806,16 @@ let isVowel = (value) => {
     switch (cased) {
         case 'a':
             return true
-            break;
         case 'e':
             return true
-            break;
         case 'a':
             return true
-            break;
         case 'i':
             return true
-            break;
         case 'o':
             return true
-            break;
         case 'u':
             return true
-            break;
         default:
             return false
     }
@@ -841,11 +835,10 @@ addToDone("Exercise 43 is correct.")
 let hasVowels = (value) => {
     let arrayed = Array.from(value);
     const checked = arrayed.filter(isVowel);
-    // console.log(checked);
     if (checked.length > 0) {
         return true
     } else return false
-}
+} 
 assert(hasVowels("banana"), true, "Exercise 44");
 assert(hasVowels("ubuntu"), true, "Exercise 44");
 assert(hasVowels("QQQQ"), false, "Exercise 44");
@@ -857,7 +850,11 @@ addToDone("Exercise 44 is correct.")
 
 // Exercise 45
 // Write a function definition named countVowels that takes in value and returns the count of the nubmer of vowels in a sequence.
-
+let countVowels = (value) => {
+    let arrayed = Array.from(value);
+    const checked = arrayed.filter(isVowel);
+        return checked.length;
+}
 assert(countVowels("banana"), 3, "Exercise 45");
 assert(countVowels("ubuntu"), 3, "Exercise 45");
 assert(countVowels("mango"), 2, "Exercise 45");
