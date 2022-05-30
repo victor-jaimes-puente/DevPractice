@@ -1,22 +1,22 @@
 "use strict"; // leave this line here :)
 
 // Keep this function definition in order to test expected vs. actual results
-const assert = function(actual, expected, message = "") {
+const assert = function (actual, expected, message = "") {
 
     // This compares primitive values and collections. If they differ, throw an error.
-    if(JSON.stringify(actual) !== JSON.stringify(expected)) {
+    if (JSON.stringify(actual) !== JSON.stringify(expected)) {
         console.error('[assert] expected:    ' + JSON.stringify(expected))
         console.error('[assert] instead got: ' + JSON.stringify(actual))
 
         throw Error("Assert failed in " + message);
     }
-};  
+};
 
 
 // Keep this function here in order to add correct questions to the counter
 var finished = done++;
-console.log("problems finished = " + finished);function 
-addToDone(message) {
+console.log("problems finished = " + finished); function
+    addToDone(message) {
     var node = document.createElement("LI");                 // Create a <li> node
     var textnode = document.createTextNode(message);         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
@@ -37,7 +37,7 @@ var doingJSRightNow = true
 
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
-assert(doingJSRightNow, true, "Exercise 0"); 
+assert(doingJSRightNow, true, "Exercise 0");
 
 
 //  Exercise 1
@@ -93,7 +93,7 @@ addToDone("Exercise 5 is correct");
 // Recommend using the built-in JS operation to add to an array.
 vegetables.push("tomato");
 
-assert(vegetables,["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
+assert(vegetables, ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
 var finished = done++;
 console.log("problems finished = " + finished);
 addToDone("Exercise 6 is correct")
@@ -145,7 +145,7 @@ addToDone("Exercise 10 is correct")
 // This function generates a random number that is both positive and even
 function randomPositiveEvenNumber() {
     var randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if(randomNumber % 2 !== 0) {
+    if (randomNumber % 2 !== 0) {
         return randomPositiveEvenNumber()
     }
 
@@ -155,7 +155,7 @@ function randomPositiveEvenNumber() {
 // this function generates a random number that is both positive and odd
 function randomPositiveOddNumber() {
     var randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if(randomNumber % 2 === 0) {
+    if (randomNumber % 2 === 0) {
         return randomPositiveOddNumber();
     }
 
@@ -165,7 +165,7 @@ function randomPositiveOddNumber() {
 // this function generates a random number that is both negative and even.
 function randomNegativeEvenNumber() {
     var randomNumber = Math.ceil(Math.random() * -100) - 10;
-    if(randomNumber % 2 === 0) {
+    if (randomNumber % 2 === 0) {
         return randomNumber;
     }
 
@@ -175,7 +175,7 @@ function randomNegativeEvenNumber() {
 // this function generates a random number that is both negative and odd.
 function randomNegativeOddNumber() {
     var randomNumber = Math.ceil(Math.random() * -100) - 10;
-    if(randomNumber % 2 === 0) {
+    if (randomNumber % 2 === 0) {
         return randomNegativeOddNumber();
     }
 
@@ -221,7 +221,7 @@ assert(plusTwo(0), 2, "zero plus 2 is two")
 // Exercise 11
 // Write a function definition for a function named addOne that takes in a number and returns that number plus one
 
-function addOne(n){
+function addOne(n) {
     return (n + 1);
 };
 
@@ -245,7 +245,7 @@ addToDone("Exercise 11 is correct.")
 // If you get stuck, be sure to check the example code and documentation listed above
 
 
-function isPositive(n){
+function isPositive(n) {
     return n > 0;
 }
 
@@ -267,7 +267,7 @@ addToDone("Exercise 12 is correct.")
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
 
-function isNegative(n){
+function isNegative(n) {
     return n < 0;
 }
 
@@ -283,7 +283,7 @@ addToDone("Exercise 13 is correct.")
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
 
-function isOdd(n){
+function isOdd(n) {
     return (n % 2 !== 0);
 }
 
@@ -298,7 +298,7 @@ addToDone("Exercise 14 is correct.")
 // Exercise 15
 // Write a function definition named isEven that takes in a number and returns true or false if that number is even.
 
-function isEven(n){
+function isEven(n) {
     return (n % 2 == 0);
 }
 
@@ -315,7 +315,7 @@ addToDone("Exercise 15 is correct.")
 // Exercise 16
 // Write a function definition named identity that takes in any input and returns that input. Don't overthink this one!
 
-function identity(input){
+function identity(input) {
     return input;
 }
 
@@ -333,7 +333,7 @@ addToDone("Exercise 16 is correct.")
 // Exercise 17
 // Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
 
-function isPositiveOdd(n){
+function isPositiveOdd(n) {
     return isPositive(n) && isOdd(n);
 }
 
@@ -350,11 +350,11 @@ addToDone("Exercise 17 is correct.")
 // Exercise 18
 // Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
 
-function isPositiveEven(n){
+function isPositiveEven(n) {
     return isPositive(n) && isEven(n);
 }
 
-assert(isPositiveEven(4), true, "Exercise 18" );
+assert(isPositiveEven(4), true, "Exercise 18");
 assert(isPositiveEven(positiveOddNumber), false, "Exercise 18");
 assert(isPositiveEven(positiveEvenNumber), true, "Exercise 18");
 assert(isPositiveEven(negativeOddNumber), false, "Exercise 18");
@@ -367,11 +367,11 @@ addToDone("Exercise 18 is correct.")
 // Exercise 19
 // Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
 
-function isNegativeOdd(n){
+function isNegativeOdd(n) {
     return isNegative(n) && isOdd(n);
 }
 
-assert(isNegativeOdd(-3), true, "Exercise 19" );
+assert(isNegativeOdd(-3), true, "Exercise 19");
 assert(isNegativeOdd(positiveOddNumber), false, "Exercise 19");
 assert(isNegativeOdd(positiveEvenNumber), false, "Exercise 19");
 assert(isNegativeOdd(negativeOddNumber), true, "Exercise 19");
@@ -388,7 +388,7 @@ let isNegativeEven = (n) => {
     return isNegative(n) && isEven(n);
 }
 
-assert(isNegativeEven(-4), true, "Exercise 20" );
+assert(isNegativeEven(-4), true, "Exercise 20");
 assert(isNegativeEven(positiveOddNumber), false, "Exercise 20");
 assert(isNegativeEven(positiveEvenNumber), false, "Exercise 20");
 assert(isNegativeEven(negativeOddNumber), false, "Exercise 20");
@@ -422,7 +422,7 @@ addToDone("Exercise 21 is correct.")
 // Write a function definition named double that takes in a number and returns double the provided number.
 
 let double = (n) => {
-    return n * 2 ;
+    return n * 2;
 }
 
 assert(double(4), 8, "Exercise 22");
@@ -441,7 +441,7 @@ addToDone("Exercise 22 is correct.")
 // Write a function definition named triple that takes in a number and returns triple the provided number.
 
 let triple = (n) => {
-    return n * 3; 
+    return n * 3;
 }
 
 assert(triple(4), 12, "Exercise 23");
@@ -586,7 +586,7 @@ addToDone("Exercise 30 is correct.")
 // Write a function definition named cube that takes in a number and returns the number times itself, times itself.
 
 let cube = (n) => {
-    return Math.pow(n,3);
+    return Math.pow(n, 3);
 }
 
 assert(cube(3), 27, "Exercise 31");
@@ -669,7 +669,7 @@ addToDone("Exercise 35 is correct.")
 // Exercise 36
 // Write a function definition named quotient that takes in two numbers and returns the quotient of dividing the first argument by the second argument.
 
-let quotient = (n1, n2) => { 
+let quotient = (n1, n2) => {
     return Math.floor(n1 / n2);
 
 }
@@ -685,7 +685,7 @@ addToDone("Exercise 36 is correct.")
 // Exercise 37
 // Write a function definition named remainder that takes in two numbers and returns the remainder of first argument divided by the second argument.
 
-let remainder = (n1, n2) => { 
+let remainder = (n1, n2) => {
     return (n1 % n2);
 
 }
@@ -702,7 +702,7 @@ addToDone("Exercise 37 is correct.")
 // Exercise 38
 // Write a function definition named sumOfSquares that takes in two numbers, squares each number, then returns the sum of both squares.
 
-let sumOfSquares = (n1, n2) => { 
+let sumOfSquares = (n1, n2) => {
     return (square(n1) + square(n2));
 
 }
@@ -719,7 +719,7 @@ addToDone("Exercise 38 is correct.")
 // Exercise 39
 // Write a function definition named timesTwoPlusThree that takes in a number, multiplies it by two, adds 3 and returns the result.
 
-let timesTwoPlusThree = (n) => { 
+let timesTwoPlusThree = (n) => {
     return multiply(n, 2) + 3;
 
 }
@@ -737,8 +737,8 @@ addToDone("Exercise 39 is correct.")
 // Exercise 40
 // Write a function definition named areaOfRectangle that takes in two numbers and returns the product.
 
-let areaOfRectangle = (n1, n2) => { 
-    return multiply(n1,n2);
+let areaOfRectangle = (n1, n2) => {
+    return multiply(n1, n2);
 
 }
 
@@ -757,7 +757,7 @@ addToDone("Exercise 40 is correct.")
 
 let areaOfCircle = (radius) => {
     let area = (radius * radius) * Math.PI
-    console.log(area)
+    // console.log(area)
     return area;
 }
 
@@ -774,7 +774,7 @@ addToDone("Exercise 41 is correct.")
 // Exercise 42
 // Write a function definition named circumference that takes in a number representing a circle's radius and returns the circumference.
 let circumference = (radius) => {
-    return 2 * Math.PI * radius; 
+    return 2 * Math.PI * radius;
 }
 assert(circumference(3), 18.84955592153876, "Exercise 42");
 assert(circumference(5), 31.41592653589793, "Exercise 42");
@@ -803,28 +803,28 @@ function isOneOrTwoOrThree(x) {
 // Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
 let isVowel = (value) => {
     let cased = value.toLowerCase();
-    switch(cased) {
+    switch (cased) {
         case 'a':
             return true
-          break;
+            break;
         case 'e':
-          return true
-          break;
+            return true
+            break;
         case 'a':
-         return true
-          break;
+            return true
+            break;
         case 'i':
-          return true
-          break;
+            return true
+            break;
         case 'o':
-          return true
-          break;
+            return true
+            break;
         case 'u':
-          return true
-          break;
+            return true
+            break;
         default:
-           return false
-      }
+            return false
+    }
 }
 assert(isVowel("a"), true, "Exercise 43");
 assert(isVowel("U"), true, "Exercise 43");
@@ -838,7 +838,14 @@ addToDone("Exercise 43 is correct.")
 
 // Exercise 44
 // Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
-
+let hasVowels = (value) => {
+    let arrayed = Array.from(value);
+    const checked = arrayed.filter(isVowel);
+    // console.log(checked);
+    if (checked.length > 0) {
+        return true
+    } else return false
+}
 assert(hasVowels("banana"), true, "Exercise 44");
 assert(hasVowels("ubuntu"), true, "Exercise 44");
 assert(hasVowels("QQQQ"), false, "Exercise 44");
@@ -1175,7 +1182,7 @@ addToDone("Exercise 71 is correct.");
 assert(countEvens([1, 2, 3]), 1, "Exercise 72");
 assert(countEvens([2, 5, 6]), 2, "Exercise 72");
 assert(countEvens([3, 3, 3]), 0, "Exercise 72");
-assert(countEvens([5, 6, 7, 8] ), 2, "Exercise 72");
+assert(countEvens([5, 6, 7, 8]), 2, "Exercise 72");
 var finished = done++;
 console.log("problems finished = " + finished);
 addToDone("Exercise 72 is correct.")
