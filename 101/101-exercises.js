@@ -773,7 +773,9 @@ addToDone("Exercise 41 is correct.")
 
 // Exercise 42
 // Write a function definition named circumference that takes in a number representing a circle's radius and returns the circumference.
-
+let circumference = (radius) => {
+    return 2 * Math.PI * radius; 
+}
 assert(circumference(3), 18.84955592153876, "Exercise 42");
 assert(circumference(5), 31.41592653589793, "Exercise 42");
 assert(circumference(7), 43.982297150257104, "Exercise 42");
@@ -1095,7 +1097,7 @@ console.log("problems finished = " + finished);
 addToDone("Exercise 67 is correct.")
 
 
-test
+
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
 
