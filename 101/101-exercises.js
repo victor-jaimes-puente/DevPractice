@@ -868,22 +868,7 @@ addToDone("Exercise 45 is correct.")
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
 let removeVowels = (value) => {
-    let arrayed = Array.from(value);
-    let removed = []
-    if (hasVowels(value)) {
-        for (let index = 0; index < arrayed.length; index++) {
-            const element = arrayed[index];
-            if (isVowel(element)) {
-                continue
-            } else {
-                removed.push(element);
-            }
-        }
-        let joined = removed.join('')
-        // console.log(joined.toString());
-
-        return joined;
-    } else return value
+    
 }
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
