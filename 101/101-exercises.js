@@ -868,7 +868,7 @@ addToDone("Exercise 45 is correct.")
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
 let removeVowels = (value) => {
-    
+    return value.replace(/[aeiouAEIOU]/ig,'')
 }
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
