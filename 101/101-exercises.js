@@ -868,7 +868,7 @@ addToDone("Exercise 45 is correct.")
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
 let removeVowels = (value) => {
-    return value.replace(/[aeiouAEIOU]/ig,'')
+    return value.replace(/[aeiouAEIOU]/ig, '')
 }
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
@@ -898,7 +898,7 @@ addToDone("Exercise 47 is correct.")
 
 const endsWithVowel = (value) => {
     let arrayed = value.split("")
-    let index = arrayed.length -1
+    let index = arrayed.length - 1
     return isVowel(arrayed[index])
 }
 assert(endsWithVowel("ubuntu"), true, "Exercise 48");
@@ -913,7 +913,7 @@ addToDone("Exercise 48 is correct.")
 // Exercise 49
 // Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
 const startsAndEndsWithVowel = (value) => {
-    if ( startsWithVowel(value) && endsWithVowel(value)){
+    if (startsWithVowel(value) && endsWithVowel(value)) {
         return true
     } return false
 }
@@ -927,7 +927,14 @@ addToDone("Exercise 49 is correct.")
 
 // Exercise 50
 // Write a function definition named first that takes in sequence and returns the first value of that sequence.
-
+function first(sequence) {
+    if (Array.isArray(sequence)) {
+        return sequence[0]
+    } if (typeof sequence == "string") {
+        let arrayed = sequence.split("")
+        return arrayed[0]
+    }
+}
 assert(first("ubuntu"), "u", "Exercise 50");
 assert(first([1, 2, 3]), 1, "Exercise 50");
 assert(first(["JS", "is", "awesome"]), "JS", "Exercise 50");
