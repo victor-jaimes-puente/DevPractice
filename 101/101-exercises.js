@@ -947,7 +947,14 @@ addToDone("Exercise 50 is correct.")
 
 // Exercise 51
 // Write a function definition named second that takes in sequence and returns the second value of that sequence.
-
+function second(sequence) {
+    if (Array.isArray(sequence)) {
+        return sequence[1]
+    } if (typeof sequence == "string") {
+        let arrayed = sequence.split("")
+        return arrayed[1]
+    }
+}
 assert(second("ubuntu"), "b", "Exercise 51");
 assert(second([1, 2, 3]), 2, "Exercise 51");
 assert(second(["JS", "is", "awesome"]), "is", "Exercise 51");
