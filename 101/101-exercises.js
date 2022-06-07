@@ -896,7 +896,11 @@ addToDone("Exercise 47 is correct.")
 // Exercise 48
 // Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
 
-
+const endsWithVowel = (value) => {
+    let arrayed = value.split("")
+    let index = arrayed.length -1
+    return isVowel(arrayed[index])
+}
 assert(endsWithVowel("ubuntu"), true, "Exercise 48");
 assert(endsWithVowel("banana"), true, "Exercise 48");
 assert(endsWithVowel("mango"), true, "Exercise 48");
