@@ -881,7 +881,10 @@ addToDone("Exercise 46 is correct.")
 
 // Exercise 47
 // Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
-
+const startsWithVowel = (value) => {
+    let arrayed = value.split("")
+    return isVowel(arrayed[0])
+}
 assert(startsWithVowel("ubuntu"), true, "Exercise 47");
 assert(startsWithVowel("banana"), false, "Exercise 47");
 assert(startsWithVowel("mango"), false, "Exercise 47");
