@@ -1043,7 +1043,16 @@ addToDone("Exercise 55 is correct.")
 
 // Exercise 56
 // Write a function definition named thirdToLast that takes in sequence and returns the third to last value of that sequence.
-
+function thirdToLast(sequence) {
+    if (Array.isArray(sequence)) {
+        let index = sequence.length -3
+        return sequence[index]
+    } if (typeof sequence == "string") {
+        let index = sequence.length -3
+        let arrayed = sequence.split("")
+        return arrayed[index]
+    }
+}
 assert(thirdToLast("ubuntu"), "n", "Exercise 56");
 assert(thirdToLast([1, 2, 3, 4]), 2, "Exercise 56");
 assert(thirdToLast(["JS", "is", "awesome"]), "JS", "Exercise 56");
