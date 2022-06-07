@@ -912,7 +912,11 @@ addToDone("Exercise 48 is correct.")
 
 // Exercise 49
 // Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
-
+const startsAndEndsWithVowel = (value) => {
+    if ( startsWithVowel(value) && endsWithVowel(value)){
+        return true
+    } return false
+}
 assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
 assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
 assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
