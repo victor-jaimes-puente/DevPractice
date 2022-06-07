@@ -965,7 +965,14 @@ addToDone("Exercise 51 is correct.")
 
 // Exercise 52
 // Write a function definition named third that takes in sequence and returns the third value of that sequence.
-
+function third(sequence) {
+    if (Array.isArray(sequence)) {
+        return sequence[2]
+    } if (typeof sequence == "string") {
+        let arrayed = sequence.split("")
+        return arrayed[2]
+    }
+}
 assert(third("ubuntu"), "u", "Exercise 52");
 assert(third([1, 2, 3]), 3, "Exercise 52");
 assert(third(["JS", "is", "awesome"]), "awesome", "Exercise 52");
@@ -976,7 +983,14 @@ addToDone("Exercise 52 is correct.")
 
 // Exercise 53
 // Write a function definition named forth that takes in sequence and returns the forth value of that sequence.
-
+function forth(sequence) {
+    if (Array.isArray(sequence)) {
+        return sequence[3]
+    } if (typeof sequence == "string") {
+        let arrayed = sequence.split("")
+        return arrayed[3]
+    }
+}
 assert(forth("ubuntu"), "n", "Exercise 53");
 assert(forth([1, 2, 3, 4]), 4, "Exercise 53");
 assert(forth(["JS", "is", "awesome", "right?"]), "right?", "Exercise 53");
@@ -987,7 +1001,16 @@ addToDone("Exercise 53 is correct.")
 
 // Exercise 54
 // Write a function definition named last that takes in sequence and returns the last value of that sequence.
-
+function last(sequence) {
+    if (Array.isArray(sequence)) {
+        let index = sequence.length -1
+        return sequence[index]
+    } if (typeof sequence == "string") {
+        let index = sequence.length -1
+        let arrayed = sequence.split("")
+        return arrayed[index]
+    }
+}
 assert(last("ubuntu"), "u", "Exercise 54");
 assert(last([1, 2, 3, 4]), 4, "Exercise 54");
 assert(last(["JS", "is", "awesome"]), "awesome", "Exercise 54");
