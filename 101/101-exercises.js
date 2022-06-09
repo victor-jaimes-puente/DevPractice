@@ -1064,7 +1064,15 @@ addToDone("Exercise 56 is correct.")
 
 // Exercise 57
 // Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
-
+function firstAndSecond(seq) {
+    let f = first(seq)
+    let l = second(seq)
+    let arr = []
+    arr.push(f)
+    arr.push(l)
+    console.log(arr)
+    return arr
+}
 assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
 assert(firstAndSecond(["JS", "is", "awesome"]), ["JS", "is"], "Exercise 57");
 assert(firstAndSecond(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "kiwi"], "Exercise 57");
