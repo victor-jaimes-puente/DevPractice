@@ -1066,11 +1066,11 @@ addToDone("Exercise 56 is correct.")
 // Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
 function firstAndSecond(seq) {
     let f = first(seq)
-    let l = second(seq)
+    let s = second(seq)
     let arr = []
     arr.push(f)
-    arr.push(l)
-    console.log(arr)
+    arr.push(s)
+    // console.log(arr)
     return arr
 }
 assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
@@ -1083,7 +1083,15 @@ addToDone("Exercise 57 is correct.")
 
 // Exercise 58
 // Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
-
+let firstAndLast = (seq) => {
+    let f = first(seq)
+    let l = last(seq)
+    let arr = []
+    arr.push(f)
+    arr.push(l)
+    // console.log(arr)
+    return arr
+}
 assert(firstAndLast([1, 2, 3, 4]), [1, 4], "Exercise 58");
 assert(firstAndLast(["JS", "is", "awesome"]), ["JS", "awesome"], "Exercise 58");
 assert(firstAndLast(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "guava"], "Exercise 58");
