@@ -1121,12 +1121,11 @@ addToDone("Exercise 59 is correct.")
 
 // Exercise 60
 // Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
+function sumReduce(total, value) {
+    return total + value;
+}
 function sumAll(seq) {
-
-    let sum = numbers.reduceRight(sumReduce);
-    function sumReduce(total, value) {
-        return total + value;
-    }
+    let sum = seq.reduceRight(sumReduce);
     return sum
 }
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
