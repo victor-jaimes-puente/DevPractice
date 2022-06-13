@@ -1003,10 +1003,10 @@ addToDone("Exercise 53 is correct.")
 // Write a function definition named last that takes in sequence and returns the last value of that sequence.
 function last(sequence) {
     if (Array.isArray(sequence)) {
-        let index = sequence.length -1
+        let index = sequence.length - 1
         return sequence[index]
     } if (typeof sequence == "string") {
-        let index = sequence.length -1
+        let index = sequence.length - 1
         let arrayed = sequence.split("")
         return arrayed[index]
     }
@@ -1024,10 +1024,10 @@ addToDone("Exercise 54 is correct.")
 // Write a function definition named secondToLast that takes in sequence and returns the second to last value of that sequence.
 function secondToLast(sequence) {
     if (Array.isArray(sequence)) {
-        let index = sequence.length -2
+        let index = sequence.length - 2
         return sequence[index]
     } if (typeof sequence == "string") {
-        let index = sequence.length -2
+        let index = sequence.length - 2
         let arrayed = sequence.split("")
         return arrayed[index]
     }
@@ -1045,10 +1045,10 @@ addToDone("Exercise 55 is correct.")
 // Write a function definition named thirdToLast that takes in sequence and returns the third to last value of that sequence.
 function thirdToLast(sequence) {
     if (Array.isArray(sequence)) {
-        let index = sequence.length -3
+        let index = sequence.length - 3
         return sequence[index]
     } if (typeof sequence == "string") {
-        let index = sequence.length -3
+        let index = sequence.length - 3
         let arrayed = sequence.split("")
         return arrayed[index]
     }
@@ -1121,7 +1121,14 @@ addToDone("Exercise 59 is correct.")
 
 // Exercise 60
 // Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
+function sumAll(seq) {
 
+    let sum = numbers.reduceRight(sumReduce);
+    function sumReduce(total, value) {
+        return total + value;
+    }
+    return sum
+}
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
 assert(sumAll([3, 3, 3]), 9, "Exercise 60");
 assert(sumAll([0, 5, 6]), 11, "Exercise 60");
