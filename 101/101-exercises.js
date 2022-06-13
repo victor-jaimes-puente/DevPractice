@@ -1139,6 +1139,20 @@ addToDone("Exercise 60 is correct.")
 
 //  Exercise 61
 //  Write a function definition named mean that takes in sequence of numbers and returns the average value
+function sumReduce(total, value) {
+    return total + value;
+}
+function mean(seq) {
+    let sum = seq.reduceRight(sumReduce);
+    return sum / seq.length();
+}
+assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
+assert(sumAll([3, 3, 3]), 9, "Exercise 60");
+assert(sumAll([0, 5, 6]), 11, "Exercise 60");
+var finished = done++;
+console.log("problems finished = " + finished);
+addToDone("Exercise 60 is correct.")
+
 
 assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
 assert(mean([3, 3, 3]), 3, "Exercise 61");
