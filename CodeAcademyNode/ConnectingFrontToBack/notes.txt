@@ -1,0 +1,180 @@
+Creating REST API Endpoints
+Create REST API endpoints to connect the React front-end to a Node.js back-end.
+
+Language: Javascript ES6
+Frameworks: React v17.0.2, Node v14.17.0, Express v4.16.1
+Length: 50 minutes
+Author: August Shah
+Publish Date: Nov 1, 2021
+Introduction
+As the local book club president, you need an efficient way to keep track of the book’s title and reading schedule. In this tutorial, you will put the concepts you learned in the What is REST? article into practice by creating endpoints in React that connect to the back-end API, giving CRUD (create, read, update, delete) functionality to your book club’s application.
+
+By the end of this tutorial you have implemented the following features:
+
+Retrieve the initial books list.
+Add a book and its reading schedule to the list of books.
+Update a book’s title and/or reading schedule.
+Delete a book from the list of books.
+Project Setup
+To get started with this tutorial, make sure you download the starting and solution code. When you complete the steps in this tutorial, compare your code with the code in the solution-code folder and see how you did!
+
+The starting-code folder contains the following sub-folders:
+
+frontend
+backend
+Run the following command in both sub-folders separately to install the dependencies:
+
+npm install
+To run the application, you will need to have two separate terminal windows or tabs open: one for the frontend folder and the other for the backend folder. You will want to start the application in backend folder, then the frontend folder. You can start the application with the following command:
+
+npm run start
+You will get a notification in the terminal window when starting the server in the frontend folder, stating that the port 3000 is in use and asking if you would like to use another port like below:
+
+Would you like to run the app on another port instead? › (Y/n)
+Type y in the terminal prompt to use a different port.
+
+You are ready to get started with the tutorial steps! Note that the start command runs nodemon for the backend server and react-scripts for the frontend server. Any code changes you make in these folders will trigger the application to re-render automatically.
+
+Getting Started
+In the following steps, we will create functions in frontend/src/api/books.js that will be used to interact with the back-end API using the CRUD pattern. Each function will be exported to be imported and executed in the front-end of the application. The purpose of exporting our functions is to ensure that we follow the DRY (Don’t Repeat Yourself) principle. Not isolating the functions to a specific component allows us to reuse them in other parts of the application without having to write them again.
+
+Before we start coding, you will want to familiarize yourself with the code of the following files in the starting-code folder:
+
+frontend/src/components/Book.js
+This file contains the front-end code that will use the functions we will define in this tutorial to update and delete a book. It also contains JSX code that will render the <Book> component.
+frontend/src/components/Booklist.js
+This file contains front-end code that will use the functions we will define in this tutorial to get the list of books and add a new book. It also contains JSX code that will render the <BookSchedule> component.
+backend/routes/Books.js
+This file contains back-end code that defines the API endpoints we will use to do the CRUD operations.
+Creating Books
+We have a list of books that need to be added for our book club!
+
+First, at the top of the frontend/src/api/books.js file, import API_ENDPOINT from /api/index.js.
+
+import {API_ENDPOINT} from "./api/index.js";
+Then, let’s create a function that adds a new book to the list of books. Create an async function called addNewBook that takes newTitle, newStart, and newEnd as arguments like below. Note that this function is asynchronous to ensure that the application will wait for the response from the back-end API before moving on. Remember to add the export keyword to export this function for us to use in the front-end of the application:
+
+export const addNewbook = async (newTitle, newStart, newEnd) => { 
+ 
+}
+Next, inside the addNewBook function, we will create a const variable called response that will be used to store the response of our POST request for a new book called newTitle for the book club to read between newStart date to newEnd date. Here, we use the fetch() function to connect to a specified API endpoint. In this case, we connect to API’s /books route. The second argument of the fetch() function should contain an object that specifies "PUT" as the method, a JSON string containing an object with newTitle, newStart, and newEnd as the body, and an object specifying the "Content-Type" as "application/json" as the header.
+
+export const addNewBook = async (newTitle, newStart, newEnd) => {
+  const response = await fetch(`${API_ENDPOINT}/books`, {
+    method: "POST",
+    body: JSON.stringify({
+      title: newTitle,
+      start: newStart,
+      end: newEnd
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
+Lastly, after our POST, create a const variable called newBook that will wait for the response in JSON format.
+
+const newBook = await response.json();
+Then at the very bottom of our addNewBook function block, return the newBook variable. The complete addNewBook function should look like below:
+
+export const addNewBook = async (newTitle, newStart, newEnd) => {
+  const response = await fetch(`${API_ENDPOINT}/books`, {
+    method: "POST",
+    body: JSON.stringify({
+      title: newTitle,
+      start: newStart,
+      end: newEnd
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+ 
+  const newBook = await response.json();
+  return newBook;
+}
+Notice that the body of our POST request matches the formatting of the ALL_BOOKS array in backend/routes/Books.js. This is because we are sending the data to the API in JSON format and the object keys need to match. We use the JSON.stringify function in the above addNewBook function we just defined to convert the object to a string because the API expects the data to be sent in JSON format.
+
+Reading Books
+For our book scheduler, we need to retrieve the list of books that are already stored in the back-end as well as new books that we have added. Continuing in frontend/src/api/books.js, create an async function called getBooks that will retrieve the list of books from the API.
+
+export const getBooks = async () => {};
+After you have created the function, define two const variables: response and books. The value of the response variable should await the fetch API to retrieve the books from our back-end API’s /books route. We then want the books variable to wait for the response and store it in JSON format.
+
+export const getBooks = async () => {
+  const response = await fetch(`${API_ENDPOINT}/books`);
+  const books = await response.json();
+};
+In the function above, we are using the await keyword to make sure that the function will wait for the response from the API before returning the list of items.
+
+At the end of our getBooks function, return the books variable. The complete getBooks function should look like below:
+
+export const getBooks = async () => {
+  const response = await fetch(`${API_ENDPOINT}/books`);
+  const books = await response.json();
+ 
+  return books;
+};
+ 
+Updating Books
+For our scheduler, we want to be able to update a book that has already been added to our back-end. In frontend/src/api/books.js, create an async function called updateBook that takes the arguments id, newTitle, newStart, and newEnd.
+
+export const updateBook = async (id, newTitle, newStart, newEnd) => {
+};
+Next, inside the updateBooks function, we will create a const variable called response that will be used to wait for the response of our PUT request for updating the specified book’s meta and scheduling information. We will use the fetch() function again to retrieve data from API’s books/${id} route. The second argument of the fetch() function should contain an object that specifies "PUT" as the method, a JSON string containing newTitle, newStart, and newEnd as the body, and an object specifying the "Content-Type" as "application/json" as the header.
+
+export const updateBook = async (id, newTitle, newStart, newEnd) => {
+  const response = await fetch(`${API_ENDPOINT}/books/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      newTitle,
+      newStart,
+      newEnd
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
+Then at the very bottom of our updateBook function block, return the status of response. The complete updateBook function should look like below:
+
+export const updateBook = async (id, newTitle, newStart, newEnd) => {
+  const response = await fetch(`${API_ENDPOINT}/books/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      newTitle,
+      newStart,
+      newEnd
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+ 
+  return response.status;
+};
+Deleting Books
+The last function that we are going to implement will allow us to delete a book from the list of books. We will use the DELETE method to achieve this. Create a function called deleteBook that takes the id of the book that we want to delete as an argument.
+
+export const deleteBook = async (id) => {
+};
+Using the DELETE method is straightforward. We want to pass in the id of the book that we want to delete as a URL parameter as the first argument of the fetch() function. This will select the specific book that we want to delete. When the function is executed, it will select the book that matches the id and send it to the API. The API will then delete the book and it will be removed from the list of books.
+
+export const deleteBook = async (id) => {
+  const response = await fetch(`${API_ENDPOINT}/books/${id}`, {
+    method: "DELETE"
+  });
+};
+At the end of our deleteBook function, return the status of response. The complete deleteBook function should look like below:
+
+export const deleteBook = async (id) => {
+  const response = await fetch(`${API_ENDPOINT}/books/${id}`, {
+    method: "DELETE",
+  });
+ 
+  return response.status;
+};
+Conclusion
+Congratulations! Your book club now has a custom scheduling app to help increase productivity. Take a look at the solution-code folder to compare your work with our solution code.
+
+Feel free to play with the application and experiment by making any changes you would like, whether that be in the back-end or front-end! Happy coding!
