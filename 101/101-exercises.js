@@ -1321,7 +1321,9 @@ addToDone("Exercise 71 is correct.");
 
 // Exercise 72
 // Write a function definition named countEvens that takes in sequence of numbers and returns the number of even numbers
-
+let countEvens = (seq) => {
+    return onlyEvenNumbers(seq).length;
+}
 assert(countEvens([1, 2, 3]), 1, "Exercise 72");
 assert(countEvens([2, 5, 6]), 2, "Exercise 72");
 assert(countEvens([3, 3, 3]), 0, "Exercise 72");
