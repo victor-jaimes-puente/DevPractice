@@ -1,0 +1,6 @@
+Learning different methods of interacting with serverless. 
+
+Firslty I tried Amplify Framework, deployed test aps
+
+Now working with SAM cli, working on Node crud for users table using dynamo db. 
+Will write locally and deploy, practice testing locally. 
