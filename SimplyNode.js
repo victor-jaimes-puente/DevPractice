@@ -125,7 +125,7 @@ const addTwo = num => {
   
   // ITERATORS
 
-
+// For Each
   const artists = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
 
 artists.forEach(artist => {
@@ -157,3 +157,6 @@ const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
 fruits.forEach(fruit => {
     console.log("I want to eat a " + fruit);
 })
+
+// Map Method 
+
