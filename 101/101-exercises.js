@@ -1335,7 +1335,12 @@ addToDone("Exercise 72 is correct.")
 
 // Exercise 73
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
-
+let hasOdds = (seq) => {
+    let input = [...seq]
+    if (onlyOddNumbers(input).length > 0){
+        return true 
+    }   return false 
+}
 assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
 assert(hasOdds([3, 3, 3]), true, "Exercise 73");
