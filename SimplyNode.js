@@ -176,10 +176,10 @@ fruits.forEach(fruit => {
 
 // Use .map() to create a new array that contains the first character of each string in the animals array. Save the new array to a const variable named secretMessage.
 
-const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+// const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
 
 // Create the secretMessage array below
-const secretMessage = animals.map(animal => animal[0])
+// const secretMessage = animals.map(animal => animal[0])
 
 // console.log(secretMessage.join(''));
 
@@ -188,18 +188,70 @@ const bigNumbers = [100, 200, 300, 400, 500];
 
 // Create the smallNumbers array below
 
- const smallNumbers = bigNumbers.map(number => 
-   number / 100
-  )
+//  const smallNumbers = bigNumbers.map(number => 
+//    number / 100
+//   )
 
-  console.log(smallNumbers);
+//   console.log(smallNumbers);
 
 
 //   The .filter() Method
 // Another useful iterator method is .filter(). Like .map(), .filter() returns a new array. However, .filter() returns an array of elements after filtering out certain elements from the original array. The callback function for the .filter() method should return true or false depending on the element that is passed to it. The elements that cause the callback function to return true are added to the new array. Take a look at the following example:
 
-const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+// const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
  
-const shortWords = words.filter(word => {
-  return word.length < 6;
-});
+// const shortWords = words.filter(word => {
+//   return word.length < 6;
+// });
+
+// console.log(shortWords);
+// console.log(words);
+
+// Call the .filter() method on randomNumbers to return values that are less than 250. Save them to a new array called smallNumbers, declared with const.
+
+const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+
+// Call .filter() on randomNumbers below
+const smallNumbers = randomNumbers.filter(number => {
+  return number < 250
+})
+
+console.log(smallNumbers);
+
+
+// Now let’s work with an array of strings. Invoke .filter() on the favoriteWords array to return elements that have more than 7 characters. Save the returned array to a const variable named longFavoriteWords.
+
+const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+
+// Call .filter() on favoriteWords below
+
+const longFavoriteWords = favoriteWords.filter(favWord => {
+  return favWord.length > 7 
+})
+
+console.log(longFavoriteWords);
+
+// The .findIndex() Method
+// We sometimes want to find the location of an element in an array. That’s where the .findIndex() method comes in! Calling .findIndex() on an array will return the index of the first element that evaluates to true in the callback function.
+
+// const jumbledNums = [123, 25, 78, 5, 9]; 
+ 
+// const lessThanTen = jumbledNums.findIndex(num => {
+//   return num < 10;
+// });
+// jumbledNums is an array that contains elements that are numbers.
+// const lessThanTen = declares a new variable that stores the returned index number from invoking .findIndex().
+// The callback function is an arrow function that has a single parameter, num. Each element in the jumbledNums array will be passed to this function as an argument.
+// num < 10; is the condition that elements are checked against. .findIndex() will return the index of the first element which evaluates to true for that condition.
+
+// Invoke .findIndex() on the animals array to find the index of the element that has the value 'elephant' and save the returned value to a const variable named foundAnimal.
+
+const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+
+
+const foundAnimal = animals.findIndex(animal => {
+  return animal == "elephant"
+})
+
+console.log(foundAnimal);
