@@ -4,8 +4,8 @@ const router = Router();
 /**
  * Product
  */
-router.get("/product", (req, res) => {
-  res.json({ message: "product" });
+router.get("/product", (req:any, res) => {
+  res.json({ message: req.doggy});
 });
 
 router.get("/product/:id", (req, res) => {});
