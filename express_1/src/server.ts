@@ -1,26 +1,40 @@
-
+import { createNewUser, signin } from './../clone/api-design-v4-course/src/handlers/user';
+// Import the `express` module, which is used to create the server
 import express from 'express';
+
+// Import the `router` module, which contains the main logic for the API
 import router from './router';
+
+// Import the `morgan` module, which is used to log API requests
 import morgan from 'morgan';
+
+// Import the `protect` middleware from the `auth.js` file
+import { protect } from './modules/auth';
+
+// Create a new instance of the `express` app
 const app = express();
 
-//logs all api calls
+// Use the `morgan` middleware to log all API requests to the console
 app.use(morgan('dev'))
-//allows us to use json 
+
+// Use the built-in `express.json()` middleware to parse incoming JSON data
 app.use(express.json())
-// allows for urls to be accessed as objects rather than just strings 
+
+// Use the built-in `express.urlencoded()` middleware to parse incoming URL-encoded data
+// and allow for nested objects in query strings
 app.use(express.urlencoded({extended: true}))
-// (custom)
-// app.use((req:any, res:any, next)=>{
-//  req.doggy = 'doggy'
-//  res.status(401)
-//  res.send('nope')
-// })
+
+// Define a route for the root URL that returns a simple message
 app.get('/', (req, res) => {
  res.status(200)
  res.json({ message: '🦉🦉🦉🦉🦉' }) 
 });
 
-app.use('/api', router)
+// Use the `protect` middleware to authenticate requests to the `/api` URL
+// and delegate handling to the `router` module
+app.use('/api', protect, router)
 
+app.post('/user', createNewUser)
+app.post('/signin', signin)
+// Export the `app` module to be used in other files
 export default app;
