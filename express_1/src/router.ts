@@ -2,6 +2,7 @@
 import { Router } from "express";
 import { body, validationResult } from "express-validator";
 import { createProduct, deleteProduct, getOneProduct, getProducts, updateProduct } from "./handlers/product";
+import { createUpdate, deleteUpdate, getOneUpdate, getUpdates, updateUpdate } from "./handlers/update";
 import { handleInputErrors } from "./modules/middleware";
 import {
   nameValidator,
@@ -30,15 +31,15 @@ router.delete("/product/:id", deleteProduct, (req, res) => {});
  * Update
  */
 
-router.get("/update", (req, res) => {});
+router.get("/update", getUpdates, (req, res) => {});
 
-router.get("/update/:id", (req, res) => {});
+router.get("/update/:id", getOneUpdate, (req, res) => {});
 
-router.post("/update", createUpdateVal, (req, res) => {});
+router.post("/update", createUpdateVal, createUpdate, (req, res) => {});
 
-router.put("/update/:id", updateUpdateVal, (req, res) => {});
+router.put("/update/:id", updateUpdateVal, updateUpdate, (req, res) => {});
 
-router.delete("/update/:id", (req, res) => {});
+router.delete("/update/:id", deleteUpdate , (req, res) => {});
 
 /**
  * UpdatePoint
