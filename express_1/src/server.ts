@@ -25,9 +25,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Define a route for the root URL that returns a simple message
-app.get('/', (req, res) => {
- res.status(200)
- res.json({ message: '🦉🦉🦉🦉🦉' }) 
+app.get('/', (req, res, next) => {
+   console.log('Route / ')
+   res.json({message: 'Route / '})
+   
 });
 
 // Use the `protect` middleware to authenticate requests to the `/api` URL
@@ -36,5 +37,15 @@ app.use('/api', protect, router)
 
 app.post('/user', createNewUser)
 app.post('/signin', signin)
+
+app.use((err, req, res, next)=>{
+   if(err.type == 'auth'){
+    res.status(401).json({message: 'unauthorized'})
+   }else if (err.type == 'input') {
+    res.status(400).json({message: 'invalid input'})
+   } else {
+    res.status(500).json({message: 'oops thats on us'})
+   }
+})
 // Export the `app` module to be used in other files
 export default app;

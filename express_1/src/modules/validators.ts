@@ -1,6 +1,7 @@
 import { body, oneOf, validationResult } from "express-validator";
 
-export const nameValidator = body("name").isString();
+export const nameValidator = 
+body("name").isString().isLength({min: 2, max: 255})
 
 export const updateUpdateVal = 
 body("title").optional();
