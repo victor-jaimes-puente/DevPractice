@@ -11,7 +11,13 @@ import {
   createUpdateVal,
   createUpdatepointVal,
 } from "./modules/validators";
+import { deleteUser, getUsers } from "./handlers/user";
 const router = Router();
+
+// users
+
+router.get('/user', handleInputErrors, getUsers, (req, res)=>{})
+router.delete('/user', handleInputErrors, deleteUser, (req,res)=>{})
 /**
  * Product
  */

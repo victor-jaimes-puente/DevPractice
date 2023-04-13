@@ -1,4 +1,4 @@
-import { createNewUser, signin } from './../clone/api-design-v4-course/src/handlers/user';
+
 // Import the `express` module, which is used to create the server
 import express from 'express';
 
@@ -10,6 +10,7 @@ import morgan from 'morgan';
 
 // Import the `protect` middleware from the `auth.js` file
 import { protect } from './modules/auth';
+import { createNewUser, signin } from './handlers/user';
 
 // Create a new instance of the `express` app
 const app = express();
@@ -27,7 +28,7 @@ app.use(express.urlencoded({extended: true}))
 // Define a route for the root URL that returns a simple message
 app.get('/', (req, res, next) => {
    console.log('Route / ')
-   res.json({message: 'Route / '})
+   res.json({message: 'Hello'})
    
 });
 

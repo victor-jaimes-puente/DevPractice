@@ -1,5 +1,7 @@
 import prisma from "../db";
-
+export const add = (a,b) =>{
+  return a + b
+}
 // getOne
 export const getOneUpdate = async (req, res) => {
   const update = await prisma.update.findUnique({
