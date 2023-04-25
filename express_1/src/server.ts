@@ -26,8 +26,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Define a route for the root URL that returns a simple message
-app.get('/', (req, res, next) => {
-   console.log('Route / ')
+app.get('/hello', (req, res, next) => {
+   console.log('Route /hello ')
    res.json({message: 'Hello'})
    
 });
